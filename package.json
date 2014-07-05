@@ -1,0 +1,13 @@
+{
+  "name": "tree-hole",
+  "version": "0.0.1",
+  "description": "TreeHole is a cross-platform desktop application could back up your Firefox OS phone, just like iTunes for iPhone.",
+  "author": "evanxd <itoyxd@gmail.com>",
+  "dependencies": {
+    "adb-client": "0.0.4",
+    "optimist": "0.6.1"
+  },
+  "bin": {
+    "tree-hole": "./bin/tree-hole"
+  }
+}

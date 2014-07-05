@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var fs = require('fs'),
+    path = require('path'),
+    adbClient = require('adb-client');
+
+var PROFILE_PATH = '/data/local',
+    BACKUP_PATH = __dirname + '/../backup/local';
+
+var adb = new adbClient();
+
+switch(process.argv[2]) {
+  case 'backup':
+    adb.file.pull(PROFILE_PATH, BACKUP_PATH);
+    break;
+  case 'sync':
+    adb.file.push(BACKUP_PATH, PROFILE_PATH);
+    break;
+  default:
+    console.log('No such command.');
+}
